@@ -4,10 +4,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@PrimaryKeyJoinColumn(name ="idUsers" )
+@PrimaryKeyJoinColumn(name ="user_id" )
 public class Apprenant extends Users implements Serializable {
     @OneToOne
-    @JoinColumn(name = "idUsers")
+    @JoinColumn(name = "user_id", referencedColumnName = "idUsers")
     private Users users;
 
     public Apprenant() {

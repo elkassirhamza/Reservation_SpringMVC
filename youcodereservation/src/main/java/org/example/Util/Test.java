@@ -6,10 +6,12 @@ import org.hibernate.Transaction;
 
 public class Test {
     public static void main(String[] args) {
-        Admin admin = new Admin();
+       /* Admin admin = new Admin();
         Roles roles = new Roles();
-        Apprenant apprenant =new Apprenant();
-        Users users = new Users("elkassir","hamza","elkassirhamza@gmail.com","admin", admin, apprenant, roles);
+        Apprenant apprenant =new Apprenant();*/
+        Roles roles = new Roles();
+        roles.setIdRole(1L);
+        Users users = new Users("test","test","test@gmail.com","admin", roles);
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction  = null;

@@ -8,9 +8,13 @@ import java.util.Collection;
 public class Roles implements Serializable {
     @Id
     @GeneratedValue
+    @Column(name = "role_id")
     private Long idRole;
+
+    @Column(name = "role_type")
     private String roleType;
-    @OneToMany(mappedBy = "idUsers")
+
+    @OneToMany(mappedBy = "roles")
     private Collection<Users> users;
 
     public Roles() {

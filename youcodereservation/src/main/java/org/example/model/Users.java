@@ -8,6 +8,7 @@ import java.io.Serializable;
 public class Users implements Serializable {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long idUsers;
     private String nom;
     private String prenom;
@@ -17,8 +18,9 @@ public class Users implements Serializable {
     private Admin admin;
     @OneToOne (mappedBy = "users")
     private Apprenant apprenant;
+
     @ManyToOne
-    @JoinColumn(name = "idRole")
+    @JoinColumn(name = "role_id")
     private Roles roles;
 
     public Users() {
@@ -33,13 +35,20 @@ public class Users implements Serializable {
         this.apprenant = apprenant;
         this.roles = roles;
     }
-
-    public Users(String nom, String prenom, String email, String password, Roles roles) {
+    public Users( String nom, String prenom, String email, String password, Roles roles) {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.password = password;
         this.roles = roles;
+    }
+
+    public Users(String nom, String prenom, String email, String password) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.password = password;
+
     }
 
     public Long getIdUsers() {
