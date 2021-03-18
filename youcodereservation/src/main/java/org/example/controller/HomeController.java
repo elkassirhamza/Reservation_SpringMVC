@@ -15,4 +15,12 @@ public class HomeController {
 	public ModelAndView test(HttpServletResponse response) throws IOException{
 		return new ModelAndView("home");
 	}
+	@RequestMapping("/register")
+	public String test() {
+		return "register";
+	}
+	@RequestMapping("/checking")
+	public String test1() {
+		return "checking";
+	}
 }

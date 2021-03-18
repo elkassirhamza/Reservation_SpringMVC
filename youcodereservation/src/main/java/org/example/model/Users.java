@@ -51,6 +51,16 @@ public class Users implements Serializable {
 
     }
 
+
+    public Users(Long idUsers, String nom, String prenom, String email, String password, Roles roles) {
+        this.idUsers = idUsers;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
+
     public Long getIdUsers() {
         return idUsers;
     }
@@ -113,5 +123,17 @@ public class Users implements Serializable {
 
     public void setApprenant(Apprenant apprenant) {
         this.apprenant = apprenant;
+    }
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "idUsers=" + idUsers +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", roles=" + roles +
+                '}';
     }
 }
