@@ -2,12 +2,15 @@ package org.example.Util;
 
 import org.example.Dao.*;
 import org.example.model.*;
+import org.example.service.UserService;
+import org.example.service.UserServiceImpl;
 import org.hibernate.Session;
 
+import java.sql.SQLException;
 import java.util.Date;
 
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
        /* Roles roles = new Roles();
         roles.setIdRole(1L);
@@ -59,8 +62,11 @@ public class Test {
         //Roles roles = new Roles();
         roles.setIdRole(2L);
 
-        apprenantDao.createApprenant(new Apprenant("MOUHSSINE","ecchoufi","mouhssine@gmail.com","appre",roles));
+        apprenantDao.createApprenant(new Apprenant("makhlouk","yassine","yassine@gmail.com","123456",roles));
 */
+
+        UserService ser=new UserServiceImpl();
+        System.out.println(ser.validate("mouhssine@gmail.com","appre"));
 
 
         //Add reservation//

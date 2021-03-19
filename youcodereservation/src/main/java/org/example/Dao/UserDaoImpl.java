@@ -4,12 +4,18 @@ import org.example.Util.HibernateUtil;
 import org.example.model.Users;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
+@Repository("UserDao")
+@Component
 
 public class UserDaoImpl implements UserDao{
     Session session;
     @Override
+
     public void createUser(Users user) {
         Session session = null;
 
