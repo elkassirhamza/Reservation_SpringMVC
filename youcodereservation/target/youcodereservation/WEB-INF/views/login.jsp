@@ -10,7 +10,7 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" type="text/css"
-          href="${ pageContext.request.contextPath}/resources/login.css">
+          href="${pageContext.request.contextPath}/resources/login.css">
 </head>
 <body>
 <div class="login">
