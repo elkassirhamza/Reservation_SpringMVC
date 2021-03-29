@@ -25,7 +25,6 @@ import java.util.List;
         @Override
         @Transactional
         public List<Reservation> getAllReservation() {
-
             return reservationDao.getAllReservation();
         }
 

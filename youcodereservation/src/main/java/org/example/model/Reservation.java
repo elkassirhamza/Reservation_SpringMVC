@@ -17,7 +17,19 @@ public class Reservation {
     @JoinColumn(name = "idUsers")
     private Apprenant apprenant;
 
+    private String typeReservation;
+
+
+
     public Reservation() {
+    }
+
+    public Reservation(Date dateReservation, boolean confirmation, String typeReservation, Apprenant apprenant) {
+        super();
+        this.dateReservation = dateReservation;
+        this.confirmation = confirmation;
+        this.typeReservation = typeReservation;
+        this.apprenant = apprenant;
     }
 
     public Reservation(Date dateReservation, boolean confirmation, Apprenant apprenant) {
@@ -33,6 +45,10 @@ public class Reservation {
         this.apprenant = apprenant;
     }
 
+    public Reservation(Date dateReservation, Apprenant apprenant) {
+        this.dateReservation = dateReservation;
+        this.apprenant = apprenant;
+    }
 
     public Long getIdReservation() {
         return idReservation;
@@ -65,7 +81,13 @@ public class Reservation {
     public void setNbrPlacetablesByIdReservation(Collection<NbrPlace> nbrPlacetablesByIdReservation) {
         this.nbrPlacetablesByIdReservation = nbrPlacetablesByIdReservation;
     }
+    public String getTypeReservation() {
+        return typeReservation;
+    }
 
+    public void setTypeReservation(String typeReservation) {
+        this.typeReservation = typeReservation;
+    }
     public Apprenant getApprenant() {
         return apprenant;
     }

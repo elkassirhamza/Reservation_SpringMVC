@@ -14,28 +14,38 @@
 </head>
 <body>
 <div align="center">
-    <h1>Welcome ${name}</h1>
+    <h1>Welcome <%= request.getSession().getAttribute("prenom") %></h1>
 
 
 
 
-    <form:form action="saveReservation" method="post"
-               modelAttribute="reservation">
-        <td>Date:</td>
-        <form:input type="date" id="start" name="trip-start"
-                    value="22-07-2021" min="01-01-2021" max="31-12-2022"
-                    path="dateReservation" />
-        <td colspan="2" align="center">
-            <input type="submit" value="Save">
+<%--    <form:form action="saveReservation" method="post"--%>
+<%--               modelAttribute="reservation">--%>
+<%--        <td>Date:</td>--%>
+<%--        <form:input type="date" id="start" name="trip-start"--%>
+<%--                    min="01-01-2021" max="31-12-2022"--%>
+<%--                    path="dateReservation" />--%>
+<%--        <td colspan="2" align="center">--%>
+<%--            <input type="submit" value="Save">--%>
 
-        </td>
+<%--        </td>--%>
+
+<%--    </form:form>--%>
+
+<%--    <a href="logout">Logout</a>--%>
+
+        <form:form action="saveReservation" method="post" modelAttribute="reservation">
+            <form:input type="Date" name="date" path="dateReservation"/>
 
 
-    </form:form>
+    <form:select id="inputState" class="form-control" path="typeReservation">
+        <form:option value ="weekend">weekend</form:option>
+        <form:option value ="matin">matin</form:option>
+        <form:option value ="soir">soir</form:option>
+    </form:select>
 
-
-
-
+            <input type="submit" value="Save"/>
+        </form:form>
 </div>
 
 </body>

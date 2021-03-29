@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.example.model.Roles;
 import org.example.model.Users;
@@ -28,7 +29,7 @@ public class LoginController {
     @Qualifier("UserService")
     private UserService userService;
 
-    Users user;
+    static Users user;
     Roles role;
 
     @RequestMapping(value = "/Login", method = RequestMethod.POST)
@@ -46,15 +47,27 @@ public class LoginController {
         } if (userService.validate(email, password) == "apprenant") {
             user =userService.getByEmail(email);
 
+            HttpSession hSession = request.getSession(true);
+            System.out.println(user.getIdUsers());
+            hSession.setAttribute("id_user", user.getIdUsers());
+            hSession.setAttribute("nom", user.getNom());
+            hSession.setAttribute("prenom", user.getPrenom());
             String name = user.getNom();
+            System.out.println(name);
             /*String prenom = user.getPrenom();*/
-            model.addAttribute("model",name);
+            model.addAttribute("user",user);
             //model.addAttribute("model",prenom);
             System.out.println("login successful");
             return "redirect:/reservform";
         }else {
             return "redirect:/login";
         }
+    }
+    @RequestMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        System.out.println("logout succeed");
+        return "redirect:/login";
     }
 
 }
