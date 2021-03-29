@@ -53,7 +53,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public boolean validate(String email, String password) throws ClassNotFoundException, SQLException {
+    public String validate(String email, String password) throws ClassNotFoundException, SQLException {
         return userRepository.validate(email, password);
+    }
+
+    @Override
+    @Transactional
+    public Users getByEmail(String email){
+        return userRepository.getByEmail(email);
     }
 }

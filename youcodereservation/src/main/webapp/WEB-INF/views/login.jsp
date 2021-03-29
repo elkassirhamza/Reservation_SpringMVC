@@ -18,13 +18,15 @@
 
         <div class='login-box'>
             <form action="Login" method="post">
-                <p>Email</p>
-                <input type="email" name="email" placeholder="email">
-                <p>Password</p>
+                <p class='txt'>Email</p>
+                <input type="email" name="email" placeholder="email" required>
+                <p class='txt'>Password</p>
 
-                <input type="password" name="password" placeholder=" password">
-                <input type="submit" name="submit" value="login">
-                <%--<button type="submit" class="btn btn-primary btn-block btn-large">Login</button>--%>
+                <input type="password" name="password" placeholder=" password" required>
+                <button type="submit" name="submit" value="login" class="btn btn-primary btn-block btn-large">Login</button>
+                <%--<input class='loginn'type="submit" name="submit" value="login">--%>
+                <a href='register'><p>Not a member? <span>Sign Up</span></p></a>
+
             </form>
 
         </div>

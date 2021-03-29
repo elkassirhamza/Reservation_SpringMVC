@@ -23,20 +23,20 @@
                         <div class="form-wrapper">
                             <label> prenom</label>
                             <input type="text" class="input form-control" name="prenom"
-                                   placeholder="prenom" />
+                                   placeholder="prenom" required/>
                         </div>
                         <div class="form-wrapper">
                             <label>nom</label>
-                            <input type="text" class="input form-control" name="nom" placeholder="nom" />
+                            <input type="text" class="input form-control" name="nom" placeholder="nom" required/>
                         </div>
                     </div>
                     <div class="form-wrapper">
                         <label>email </label>
-                        <input type="text" class="input form-control" name="email" placeholder="EMAIL" />
+                        <input type="text" class="input form-control" name="email" placeholder="EMAIL" required />
                     </div>
                     <div class="form-wrapper">
                         <label>Password</label>
-                        <input type="password" class="input form-control" name="password" placeholder="password" />
+                        <input type="password" class="input form-control" name="password" placeholder="password" required/>
                     </div>
                     <%--<div class="form-wrapper">
                         <label>Role</label>
@@ -48,6 +48,7 @@
                     </div>--%>
 
                     <button type="submit" value="register">Register Now</button>
+                    <a class='forgot' href='login'>Already have an account?</a>
                 </form>
             </div>
         </div>

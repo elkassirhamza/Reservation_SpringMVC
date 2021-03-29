@@ -65,8 +65,8 @@ public class Test {
         apprenantDao.createApprenant(new Apprenant("makhlouk","yassine","yassine@gmail.com","123456",roles));
 */
 
-        UserService ser=new UserServiceImpl();
-        System.out.println(ser.validate("mouhssine@gmail.com","appre"));
+        /*UserService ser=new UserServiceImpl();
+        System.out.println(ser.validate("mouhssine@gmail.com","appre"));*/
 
 
         //Add reservation//

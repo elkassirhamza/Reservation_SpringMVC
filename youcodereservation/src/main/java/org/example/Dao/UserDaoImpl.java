@@ -1,6 +1,7 @@
 package org.example.Dao;
 
 import org.example.Util.HibernateUtil;
+import org.example.model.Roles;
 import org.example.model.Users;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -23,7 +24,9 @@ public class UserDaoImpl implements UserDao{
         session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction  = null;
         transaction = session.beginTransaction();
-
+        long theId = 2;
+        Roles role = session.get(Roles.class, theId);
+        user.setRoles(role);
         session.save(user);
         transaction.commit();
 

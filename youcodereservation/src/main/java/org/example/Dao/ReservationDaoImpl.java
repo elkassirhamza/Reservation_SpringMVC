@@ -4,9 +4,11 @@ import org.example.Util.HibernateUtil;
 import org.example.model.Reservation;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class ReservationDaoImpl implements ReservationDao{
 
     //Session session;

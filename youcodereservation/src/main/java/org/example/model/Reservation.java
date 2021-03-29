@@ -10,7 +10,7 @@ public class Reservation {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long idReservation;
     private Date dateReservation;
-    private boolean confirmation;
+    private boolean confirmation = false;
     @OneToMany(mappedBy = "reservation")
     private Collection<NbrPlace> nbrPlacetablesByIdReservation;
     @ManyToOne
