@@ -1,10 +1,12 @@
 package org.example.service;
 
 import org.example.model.Users;
+import org.springframework.stereotype.Component;
 
 import java.sql.SQLException;
 import java.util.List;
 
+@Component
 public interface UserService {
     public List<Users> findAll() throws ClassNotFoundException, SQLException;
     public Users findById(Long id) throws ClassNotFoundException, SQLException;

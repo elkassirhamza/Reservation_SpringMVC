@@ -31,10 +31,10 @@ public class HomeController {
 	public ModelAndView test(HttpServletResponse response) throws IOException{
 		return new ModelAndView("home");
 	}
-	/*@RequestMapping("/register")
-	public String register() {
-		return "register";
-	}*/
+	@RequestMapping(value="/home1")
+	public ModelAndView test3(HttpServletResponse response) throws IOException{
+		return new ModelAndView("home1");
+	}
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String register() {
 		return "register";
@@ -45,9 +45,20 @@ public class HomeController {
 		return "checking";
 	}
 
+	@RequestMapping("/reservation1")
+	public String loadReserv  () {
+
+		return "reservation1";
+	}
+
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
 		return "login";
 
+	}
+
+	@RequestMapping("/register1")
+	public String Register1(HttpServletResponse response) throws IOException{
+		return "register1";
 	}
 }

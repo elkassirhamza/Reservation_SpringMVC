@@ -1,0 +1,29 @@
+body{
+    background-image:url('../resources/images/bg.jpg');
+    margin-top: 10rem !important;
+}
+h1{
+    text-align: center;
+    font-size: 4rem !important;
+    color: #5bc0de !important;
+    /*display: inline-block;*/
+    /*margin: 0 0.5rem;
+
+    animation: bounce; !* referring directly to the animation's @keyframe declaration *!
+    animation-duration: 2s;*/ /* don't forget to set a duration! */
+}
+span{
+    color: aliceblue;
+}
+.links{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5rem;
+    margin-left: 21rem;
+    width: 40%;
+}
+
+a{
+    text-decoration: none;
+
+}

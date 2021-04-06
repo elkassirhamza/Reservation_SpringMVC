@@ -11,8 +11,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository("UserDao")
-@Component
-
 public class UserDaoImpl implements UserDao{
     Session session;
     @Override
@@ -122,6 +120,7 @@ public class UserDaoImpl implements UserDao{
             userUp.setEmail(user.getEmail());
             userUp.setPassword(user.getPassword());
             userUp.setRoles(user.getRoles());
+            userUp.setStatus(user.isStatus());
             System.out.println("User updated");
         }else{
             System.out.println("User Not Exist");

@@ -23,6 +23,10 @@ public class Users implements Serializable {
     @JoinColumn(name = "role_id")
     private Roles roles;
 
+    private boolean status = false;
+
+
+
     public Users() {
     }
 
@@ -51,6 +55,14 @@ public class Users implements Serializable {
 
     }
 
+    public Users(String nom, String prenom, String email, String password, Roles roles, boolean status) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+        this.status = status;
+    }
 
     public Users(Long idUsers, String nom, String prenom, String email, String password, Roles roles) {
         this.idUsers = idUsers;
@@ -125,6 +137,13 @@ public class Users implements Serializable {
         this.apprenant = apprenant;
     }
 
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
     @Override
     public String toString() {
         return "Users{" +

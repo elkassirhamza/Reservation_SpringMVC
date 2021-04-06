@@ -31,7 +31,9 @@ public class Apprenant extends Users implements Serializable {
         this.users = users;
     }
 
-
+    public Apprenant(String nom, String prenom, String email, String password, Roles roles, boolean status) {
+        super(nom, prenom, email, password, roles, status);
+    }
 
     public Users getUsers() {
         return users;

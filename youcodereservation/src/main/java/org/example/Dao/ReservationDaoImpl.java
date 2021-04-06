@@ -2,8 +2,10 @@ package org.example.Dao;
 
 import org.example.Util.HibernateUtil;
 import org.example.model.Reservation;
+import org.example.model.Users;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -93,5 +95,16 @@ public class ReservationDaoImpl implements ReservationDao{
         }
         session.getTransaction().commit();
         return reservationUpdate;
+    }
+
+    Session session;
+
+    public List<Reservation> getResByUser(Users userEntity){
+        session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        Query query = session.createQuery("From Reservation where apprenant.id=:userId");
+        query.setParameter("userId", userEntity.getIdUsers());
+        List<Reservation> reservationList = query.list();
+        return reservationList;
     }
 }

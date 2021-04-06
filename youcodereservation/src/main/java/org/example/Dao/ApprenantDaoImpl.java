@@ -13,8 +13,5 @@ public class ApprenantDaoImpl implements ApprenantDao{
         session.beginTransaction();
         session.save(apprenant);
         session.getTransaction().commit();
-
-
-
     }
 }

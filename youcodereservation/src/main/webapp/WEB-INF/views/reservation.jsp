@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-    
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,30 +12,35 @@
 </head>
 <body  class="mx-auto">
 
-
+<a class="btn btn-danger " href="logout">Logout</a>
         <%--<a href="reservform"><button type="button" class="btn btn-outline-success">New Reservation</button></a>--%>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">id_Reservation</th>
-      <th scope="col">date_Reservation</th>
+        <th scope="col">nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">date_Reservation</th>
         <th scope="col">Type</th>
-      <th scope="col">Confirmation</th>
-        <th scope="col">username</th>
-
+        <th scope="col">Confirmation</th>
         <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-  <a href="logout">Logout</a>
+
  <c:forEach var="reservation" items="${listReservation}">
                 <tr>
- 
-                    <td>${reservation.idReservation}</td>
+                    <td>${reservation.apprenant.nom}</td>
+                    <td>${reservation.apprenant.prenom}</td>
                     <td>${reservation.dateReservation}</td>
                     <td>${reservation.typeReservation}</td>
-                    <td>${reservation.confirmation}</td>
-                    <td>${reservation.apprenant.nom}</td>
+                    <td>
+                        <c:if test="${reservation.confirmation == true}">
+                            <p>Confirmer</p>
+                        </c:if>
+                        <c:if test="${reservation.confirmation == false}">
+                            <p>Non confirmer</p>
+                        </c:if>
+                    </td>
                     <td class="d-flex flex-row">
                         <form action="deleteReservation"  method="post">
                             <input type="hidden" value="${reservation.idReservation}"  name="id" class="form-control"/>
